@@ -1,38 +1,179 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Download the free AI Security Starter Kit from Sheryl Automates." />
-    <meta property="og:title" content="Free AI Security Starter Kit | Sheryl Automates" />
-    <meta property="og:description" content="A practical checklist and prompts for safer everyday AI use." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://sherylautomates.com/" />
-    <title>Free AI Security Starter Kit | Sheryl Automates</title>
-    <style>
-      :root { color-scheme: light; --ink:#20201d; --muted:#64645e; --paper:#f7f4ee; --card:#fff; --accent:#18785f; --line:#dfddd5; }
-      * { box-sizing:border-box; }
-      body { margin:0; min-height:100vh; display:grid; place-items:center; padding:24px; background:var(--paper); color:var(--ink); font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif; }
-      main { width:min(760px,100%); padding:clamp(32px,7vw,72px); background:var(--card); border:1px solid var(--line); border-radius:24px; box-shadow:0 18px 60px rgba(32,32,29,.08); text-align:center; }
-      .brand { margin:0 0 42px; font-weight:750; letter-spacing:.02em; }
-      .eyebrow { margin:0 0 16px; color:var(--accent); font-size:.78rem; font-weight:800; letter-spacing:.14em; }
-      h1 { margin:0; font-family:Georgia,serif; font-size:clamp(2.4rem,7vw,4.8rem); line-height:.98; letter-spacing:-.045em; }
-      .intro { max-width:580px; margin:24px auto 30px; color:var(--muted); font-size:clamp(1rem,2vw,1.18rem); line-height:1.7; }
-      .button { display:inline-block; padding:15px 24px; border-radius:999px; background:var(--accent); color:#fff; font-weight:750; text-decoration:none; box-shadow:0 8px 24px rgba(24,120,95,.2); }
-      .button:hover,.button:focus-visible { background:#11654f; transform:translateY(-1px); }
-      .note { margin:18px 0 0; color:var(--muted); font-size:.88rem; }
-      footer { margin-top:46px; padding-top:24px; border-top:1px solid var(--line); color:var(--muted); font-size:.82rem; line-height:1.5; }
-    </style>
-  </head>
-  <body>
-    <main>
-      <p class="brand">Sheryl Automates</p>
-      <p class="eyebrow">FREE PDF DOWNLOAD</p>
-      <h1>AI Security<br />Starter Kit</h1>
-      <p class="intro">A practical checklist and ready-to-use prompts to help you review your AI accounts, connected services and privacy settings—without needing a technical background.</p>
-      <a class="button" href="AI-Security-Starter-Kit-Sheryl-Automates.pdf" download>Download the free PDF</a>
-      <p class="note">The PDF should download or open in your browser.</p>
-      <footer>This educational resource does not replace professional cybersecurity advice. Never paste passwords, API keys, recovery codes or other secrets into an AI tool.</footer>
-    </main>
-  </body>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Calm systems for busy businesses. Sheryl Automates helps small and service-based businesses simplify leads, follow-up, CRM and everyday workflows." />
+<meta property="og:title" content="Sheryl Automates — Calm systems for busy businesses" />
+<meta property="og:description" content="We help service-based businesses simplify leads, follow-up, CRM and everyday workflows so they can save time, reduce admin and grow with more clarity." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://sherylautomates.com/" />
+<title>Sheryl Automates — Calm systems for busy businesses</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --espresso:#17110D;
+    --mocha:#2A201A;
+    --sage-bg:#F2F3EC;
+    --ivory:#F7F3EB;
+    --sage-accent:#B7BCA9;
+    --olive:#73765F;
+    --taupe:#B7A791;
+    --gold:#B49A6A;
+    --ink:#2B2521;
+    --warm-white:#F5F1E9;
+    --line: rgba(43,37,33,0.14);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --sage-bg:#1B1611; --ivory:#211A15; --ink:#EFE9DE; --line: rgba(239,233,222,0.14); }
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--sage-bg); color:var(--ink);
+    font-family:"DM Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    line-height:1.55; -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{ font-family:"Playfair Display",Georgia,serif; font-weight:600; letter-spacing:.2px; text-wrap:balance; margin:0; }
+  .eyebrow{ text-transform:uppercase; letter-spacing:.14em; font-size:.72rem; font-weight:600; color:var(--olive); }
+  @media (prefers-color-scheme: dark){ .eyebrow{ color:var(--taupe); } }
+
+  .shell{ max-width:1040px; margin:0 auto; padding: 28px 24px 80px; }
+
+  nav{ display:flex; justify-content:space-between; align-items:center; padding:6px 0 30px; }
+  nav .brand{ font-family:"Playfair Display",Georgia,serif; font-size:1.05rem; letter-spacing:.04em; }
+  nav .navlinks{ display:flex; gap:22px; align-items:center; }
+  nav .navlinks a{ font-size:.82rem; color:var(--ink); text-decoration:none; opacity:.75; }
+  nav .navlinks a:hover{ opacity:1; }
+  @media (max-width:560px){ nav .navlinks{ gap:14px; } }
+
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    font-family:"DM Sans",sans-serif; font-weight:600; font-size:.88rem; letter-spacing:.03em;
+    padding:14px 26px; border-radius:8px; border:1px solid var(--gold);
+    background:var(--gold); color:var(--espresso); cursor:pointer; text-transform:uppercase;
+    text-decoration:none; transition: transform .15s ease, background .15s ease;
+  }
+  .btn:hover{ background:#c4a978; transform:translateY(-1px); }
+  .btn.ghost{ background:transparent; color:var(--warm-white); border-color:rgba(245,241,233,0.4); }
+  .btn.ghost:hover{ background:rgba(245,241,233,0.08); }
+  .btn.dark{ background:transparent; color:var(--espresso); border-color:var(--espresso); }
+  .btn.dark:hover{ background:var(--espresso); color:var(--warm-white); }
+
+  .hero{
+    background:var(--espresso); color:var(--warm-white);
+    border-radius:18px; padding:64px 48px; position:relative; overflow:hidden; margin-bottom:60px;
+  }
+  .hero::after{ content:""; position:absolute; right:-60px; top:-60px; width:300px; height:300px; border:1px solid rgba(180,154,106,0.25); border-radius:50%; }
+  .hero::before{ content:""; position:absolute; right:40px; bottom:-100px; width:230px; height:230px; border:1px solid rgba(183,188,169,0.18); border-radius:50%; }
+  .hero .eyebrow{ color:var(--taupe); }
+  .hero h1{ font-size:3rem; line-height:1.1; margin:16px 0 20px; max-width:620px; position:relative; }
+  .hero p{ max-width:520px; color:var(--warm-white); opacity:.86; font-size:1.05rem; margin:0 0 30px; position:relative; }
+  .hero .btnrow{ display:flex; gap:12px; flex-wrap:wrap; position:relative; }
+
+  .pillars{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:60px; }
+  @media (max-width:760px){ .pillars{ grid-template-columns:repeat(2,1fr);} }
+  .pillar{ background:var(--ivory); border:1px solid var(--line); border-radius:12px; padding:26px 20px; }
+  .pillar .icon{ width:38px;height:38px;margin-bottom:14px; border-radius:50%; border:1px solid var(--taupe); display:flex; align-items:center; justify-content:center; color:var(--olive); font-size:1.05rem; }
+  .pillar h3{ font-size:1rem; margin-bottom:8px; }
+  .pillar p{ font-size:.85rem; color:var(--olive); margin:0; }
+  @media (prefers-color-scheme: dark){ .pillar p{ color:var(--taupe); } }
+
+  .split{ display:grid; grid-template-columns:1.1fr .9fr; gap:40px; align-items:center; margin-bottom:60px; }
+  @media (max-width:760px){ .split{ grid-template-columns:1fr; } }
+  .split h2{ font-size:1.9rem; margin-bottom:16px; }
+  .split p{ font-size:.96rem; opacity:.85; margin:0 0 22px; max-width:480px; }
+  .checklist{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px; }
+  .checklist li{ font-size:.92rem; padding-left:22px; position:relative; }
+  .checklist li::before{ content:"✓"; position:absolute; left:0; color:var(--olive); font-weight:700; }
+  .sidecard{ background:var(--ivory); border:1px solid var(--line); border-radius:14px; padding:28px; box-shadow:0 18px 40px -22px rgba(23,17,13,0.35); }
+  .sidecard .ptitle{ font-size:.68rem; text-transform:uppercase; letter-spacing:.12em; color:var(--olive); margin-bottom:6px; }
+  @media (prefers-color-scheme: dark){ .sidecard .ptitle{ color:var(--taupe); } }
+  .sidecard h3{ font-size:1.25rem; margin-bottom:16px; }
+  .sidecard p{ font-size:.88rem; opacity:.85; margin:0; }
+
+  .quote{ background:var(--espresso); color:var(--warm-white); border-radius:18px; padding:52px 44px; text-align:center; margin-bottom:60px; }
+  .quote p{ font-family:"Playfair Display",Georgia,serif; font-size:1.35rem; line-height:1.5; max-width:700px; margin:0 auto; font-style:italic; }
+  @media (max-width:640px){ .quote p{ font-size:1.1rem; } }
+
+  .closing{ background:var(--ivory); border:1px solid var(--line); border-radius:18px; padding:44px; display:flex; justify-content:space-between; align-items:center; gap:24px; margin-bottom:40px; }
+  @media (max-width:640px){ .closing{ flex-direction:column; text-align:center; } }
+  .closing h2{ font-size:1.5rem; max-width:360px; }
+  .closing p{ font-size:.88rem; opacity:.75; margin:8px 0 0; max-width:360px; }
+
+  footer{ text-align:center; padding-top:24px; border-top:1px solid var(--line); font-size:.8rem; color:var(--olive); }
+  @media (prefers-color-scheme: dark){ footer{ color:var(--taupe); } }
+  footer a{ color:inherit; }
+</style>
+</head>
+<body>
+
+<div class="shell">
+
+  <nav>
+    <div class="brand">SHERYL AUTOMATES</div>
+    <div class="navlinks">
+      <a href="/workflow-check/">Workflow Check</a>
+      <a href="/resources/security/">Free Resources</a>
+      <a class="btn" style="padding:9px 18px; font-size:.78rem;" href="/workflow-check/">Free Workflow Check</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="eyebrow">Business Systems &amp; Automation</div>
+    <h1>Calm systems for busy businesses.</h1>
+    <p>We help service-based businesses simplify leads, follow-up, CRM and everyday workflows — so they can save time, reduce admin and grow with more clarity.</p>
+    <div class="btnrow">
+      <a class="btn" href="/workflow-check/">Get the Free Workflow Check</a>
+      <a class="btn ghost" href="/resources/security/">Explore Free Resources</a>
+    </div>
+  </section>
+
+  <section class="pillars">
+    <div class="pillar"><div class="icon">◐</div><h3>Lead Capture</h3><p>Attract and capture the right leads with clear forms and simple automations.</p></div>
+    <div class="pillar"><div class="icon">◑</div><h3>Workflow Automation</h3><p>Automate repeated tasks so nothing falls through the cracks.</p></div>
+    <div class="pillar"><div class="icon">◒</div><h3>CRM &amp; Follow-Up</h3><p>Keep client information in one place and follow up on time, every time.</p></div>
+    <div class="pillar"><div class="icon">◓</div><h3>Everyday Operations</h3><p>Quoting, scheduling, invoicing and updates — organised, not scattered.</p></div>
+  </section>
+
+  <section class="split">
+    <div>
+      <div class="eyebrow">Where to start</div>
+      <h2>Your business doesn't need more tools. It needs a clearer system.</h2>
+      <p>Most small businesses don't have a lead problem — they have a follow-up and workflow problem. The free workflow check shows you exactly where the gaps are, in about four minutes.</p>
+      <ul class="checklist">
+        <li>Written specifically from your answers</li>
+        <li>A simple workflow health score</li>
+        <li>A visual map of your current process</li>
+        <li>No obligation, no hard sell</li>
+      </ul>
+    </div>
+    <div class="sidecard">
+      <div class="ptitle">Free Workflow Check</div>
+      <h3>Find out where you're quietly losing time.</h3>
+      <p>Answer a short set of questions about how enquiries, follow-up, quoting and projects move through your business today. You'll get a personal report showing your main gaps and where to focus first.</p>
+      <div style="margin-top:22px;"><a class="btn dark" href="/workflow-check/">Start the Free Workflow Check</a></div>
+    </div>
+  </section>
+
+  <section class="quote">
+    <p>"Small inefficiencies turn into lost time, missed follow-ups and slower growth. Clear systems change that."</p>
+  </section>
+
+  <section class="closing">
+    <div>
+      <h2>Start with clarity.</h2>
+      <p>Simplify your systems, save time, and grow with more confidence.</p>
+    </div>
+    <a class="btn dark" href="/workflow-check/">Get the Free Workflow Check</a>
+  </section>
+
+  <footer>
+    &copy; Sheryl Automates &middot; <a href="/resources/security/">Free AI Security Starter Kit</a>
+  </footer>
+
+</div>
+</body>
 </html>
