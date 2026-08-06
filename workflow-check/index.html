@@ -133,6 +133,61 @@
   .thankyou .mark{ width:56px;height:56px;border-radius:50%;background:var(--espresso); color:var(--warm-white); display:flex; align-items:center; justify-content:center; margin:0 auto 20px; font-size:1.4rem; }
   .thankyou h2{ font-size:1.7rem; margin-bottom:14px; }
   .thankyou p{ font-size:.94rem; opacity:.85; margin:0 0 10px; }
+
+  .btn.ghost{ background:transparent; color:var(--warm-white); border-color:rgba(245,241,233,0.4); }
+  .btn.ghost:hover{ background:rgba(245,241,233,0.08); }
+  .btnrow{ display:flex; gap:12px; flex-wrap:wrap; position:relative; }
+
+  /* ---------- SAMPLE REPORT ---------- */
+  .reportnote{ text-align:center; font-size:.78rem; color:var(--olive); text-transform:uppercase; letter-spacing:.1em; margin-bottom:14px; }
+  @media (prefers-color-scheme: dark){ .reportnote{ color:var(--taupe); } }
+  .reportouter{ max-width:760px; margin:0 auto; }
+  .rphead{ background:var(--espresso); color:var(--warm-white); border-radius:16px 16px 0 0; padding:34px 38px; display:flex; justify-content:space-between; align-items:flex-start; gap:20px; }
+  .rphead .mark{ font-family:"Playfair Display",Georgia,serif; font-size:1.05rem; letter-spacing:.06em; }
+  .rphead .doclabel{ text-align:right; }
+  .rphead .doclabel .t1{ font-size:.68rem; text-transform:uppercase; letter-spacing:.12em; color:var(--taupe); }
+  .rphead .doclabel .t2{ font-size:.85rem; margin-top:3px; }
+  .reportbody{ background:var(--ivory); border:1px solid var(--line); border-top:none; border-radius:0 0 16px 16px; padding:40px 38px 44px; }
+  .clientstrip{ display:flex; flex-wrap:wrap; gap:26px; padding-bottom:24px; margin-bottom:28px; border-bottom:1px solid var(--line); }
+  .clientstrip .c{ font-size:.8rem; }
+  .clientstrip .c .k{ text-transform:uppercase; letter-spacing:.08em; font-size:.65rem; color:var(--olive); display:block; margin-bottom:3px;}
+  @media (prefers-color-scheme: dark){ .clientstrip .c .k{ color:var(--taupe); } }
+  .scoreband{ display:flex; align-items:center; gap:26px; background:var(--sage-bg); border:1px solid var(--line); border-radius:12px; padding:22px 26px; margin-bottom:30px; }
+  .scoredial{ width:84px;height:84px;border-radius:50%; background: conic-gradient(var(--olive) 0deg 234deg, var(--line) 234deg 360deg); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .scoredial span{ width:64px;height:64px;border-radius:50%;background:var(--ivory); display:flex; align-items:center; justify-content:center; font-size:1.15rem; font-weight:700; font-family:"Playfair Display",Georgia,serif; }
+  .scoreband .label{ font-size:.68rem; text-transform:uppercase; letter-spacing:.1em; color:var(--olive); margin-bottom:5px; }
+  @media (prefers-color-scheme: dark){ .scoreband .label{ color:var(--taupe); } }
+  .scoreband h3{ font-size:1.1rem; margin-bottom:4px; }
+  .scoreband p{ font-size:.83rem; margin:0; color:var(--ink); opacity:.8; max-width:420px; }
+  .rsection{ margin-bottom:32px; }
+  .rsection h3{ font-size:1.02rem; margin-bottom:14px; display:flex; align-items:center; gap:9px; }
+  .rsection h3 .n{ width:22px;height:22px;border-radius:50%;background:var(--espresso); color:var(--warm-white); font-size:.68rem; display:flex;align-items:center;justify-content:center; font-family:"DM Sans",sans-serif; font-weight:700;}
+  @media (prefers-color-scheme: dark){ .rsection h3 .n{ background:var(--gold); color:var(--espresso); } }
+  .gapcard{ display:flex; gap:14px; padding:14px 0; border-bottom:1px dashed var(--line); }
+  .gapcard:last-child{ border-bottom:none; }
+  .gapcard .sev{ width:9px;height:9px;border-radius:50%; margin-top:6px; flex-shrink:0; }
+  .sev.high{ background:#9C5B4A; }
+  .sev.med{ background:var(--gold); }
+  .sev.low{ background:#6E7B53; }
+  .gapcard .gt{ font-weight:700; font-size:.9rem; margin-bottom:3px; }
+  .gapcard .gd{ font-size:.83rem; opacity:.82; }
+  .gapcard .ge{ font-size:.78rem; opacity:.65; margin-top:4px; font-style:italic; }
+  .diagramwrap{ background:var(--sage-bg); border:1px solid var(--line); border-radius:12px; padding:24px 20px; overflow-x:auto; }
+  .flow{ display:flex; align-items:center; gap:0; min-width:640px; flex-wrap:nowrap; }
+  .fstep{ display:flex; flex-direction:column; align-items:center; text-align:center; width:96px; flex-shrink:0; }
+  .fstep .dot{ width:34px;height:34px;border-radius:50%; background:var(--ivory); border:1.5px solid var(--olive); display:flex; align-items:center; justify-content:center; font-size:.72rem; font-weight:700; margin-bottom:8px; }
+  .fstep.gap .dot{ border-color:#9C5B4A; background:#F4E4DF; color:#9C5B4A; }
+  @media (prefers-color-scheme: dark){ .fstep.gap .dot{ background:#3a241f; } }
+  .fstep .lbl{ font-size:.68rem; line-height:1.25; }
+  .fstep .flag{ font-size:.62rem; color:#9C5B4A; margin-top:4px; font-weight:700; text-transform:uppercase; letter-spacing:.04em; }
+  .fline{ flex:0 0 24px; height:1.5px; background:var(--olive); opacity:.4; margin:0 -2px 22px; }
+  .prioritylist{ display:flex; flex-direction:column; gap:10px; }
+  .pitem{ display:flex; gap:12px; align-items:baseline; font-size:.88rem; background:var(--sage-bg); border:1px solid var(--line); border-radius:9px; padding:12px 16px;}
+  .pitem b{ font-family:"Playfair Display",Georgia,serif; color:var(--olive); }
+  .rcta{ background:var(--espresso); color:var(--warm-white); border-radius:14px; padding:28px 30px; margin-top:6px; text-align:center; }
+  .rcta p{ opacity:.85; font-size:.88rem; max-width:440px; margin:8px auto 20px; }
+  .lockednote{ font-size:.76rem; color:var(--olive); text-align:center; margin-top:16px; }
+  @media (prefers-color-scheme: dark){ .lockednote{ color:var(--taupe); } }
 </style>
 </head>
 <body>
@@ -145,7 +200,10 @@
       <div class="eyebrow">Free Workflow Check</div>
       <h1>Find out where your business is quietly losing time.</h1>
       <p>A short, practical check-up on how leads, follow-up, quoting and admin actually move through your business today — with a personal report on where the gaps are.</p>
-      <button class="btn" onclick="goStage('form')">Start the Free Workflow Check</button>
+      <div class="btnrow">
+        <button class="btn" onclick="goStage('form')">Start the Free Workflow Check</button>
+        <button class="btn ghost" onclick="goStage('report')">See a Sample Report</button>
+      </div>
       <div class="meta">Takes about 4 minutes · No signup required</div>
     </div>
 
@@ -213,6 +271,7 @@
               <option value="">Select one</option>
               <option>Interior design</option><option>Home services / trades</option><option>Professional services</option><option>Retail</option><option>Other</option>
             </select>
+            <input type="text" id="industryOther" name="industryOther" placeholder="Tell us your industry" style="display:none; margin-top:10px;">
           </div>
           <div class="field">
             <label>Team size</label>
@@ -309,6 +368,98 @@
     </div>
   </section>
 
+  <!-- ============ SAMPLE REPORT (preview only, not a real submission) ============ -->
+  <section class="stage" id="stage-report">
+    <div class="reportnote">Sample report — for illustration only</div>
+    <div class="reportouter">
+      <div class="rphead">
+        <div class="mark">SHERYL AUTOMATES</div>
+        <div class="doclabel">
+          <div class="t1">Free Workflow Report</div>
+          <div class="t2">Prepared for Marlow Interiors</div>
+        </div>
+      </div>
+      <div class="reportbody">
+        <div class="clientstrip">
+          <div class="c"><span class="k">Industry</span>Interior Design</div>
+          <div class="c"><span class="k">Team size</span>Solo, occasional contractors</div>
+          <div class="c"><span class="k">Prepared</span>Sample date</div>
+        </div>
+
+        <div class="scoreband">
+          <div class="scoredial"><span>65</span></div>
+          <div>
+            <div class="label">Workflow Health Score</div>
+            <h3>Fair — with a few gaps costing real time</h3>
+            <p>Intake and quoting are working, but follow-up and project handoffs rely heavily on memory. This is the most common gap seen in solo and small service businesses.</p>
+          </div>
+        </div>
+
+        <div class="rsection">
+          <h3><span class="n">1</span>Summary</h3>
+          <p style="font-size:.9rem; opacity:.85;">Enquiries arrive mainly through social DMs and phone, with client details noted informally. Quotes are built manually for each client, and once a project starts, progress is tracked by memory rather than a shared system. The biggest risk sits between "lead goes quiet" and "project is underway" — this is where things are most likely to be forgotten.</p>
+        </div>
+
+        <div class="rsection">
+          <h3><span class="n">2</span>Main Gaps Identified</h3>
+          <div class="gapcard">
+            <div class="sev high"></div>
+            <div><div class="gt">Lead follow-up has no system</div><div class="gd">Enquiries that don't reply immediately are followed up "when remembered," not on a schedule.</div><div class="ge">Likely effect: warm leads go cold before a second contact happens.</div></div>
+          </div>
+          <div class="gapcard">
+            <div class="sev high"></div>
+            <div><div class="gt">Client information lives in one place: memory</div><div class="gd">No shared record of who a client is, what was discussed, or what stage they're at.</div><div class="ge">Likely effect: details get repeated or lost, especially under time pressure.</div></div>
+          </div>
+          <div class="gapcard">
+            <div class="sev med"></div>
+            <div><div class="gt">Quotes are rebuilt from scratch each time</div><div class="gd">No reusable template, so quoting takes longer than it needs to.</div><div class="ge">Likely effect: slower turnaround, inconsistent pricing presentation.</div></div>
+          </div>
+          <div class="gapcard">
+            <div class="sev low"></div>
+            <div><div class="gt">Project status isn't visible outside your head</div><div class="gd">Updates to clients happen reactively, when they ask.</div><div class="ge">Likely effect: more "just checking in" messages than necessary.</div></div>
+          </div>
+        </div>
+
+        <div class="rsection">
+          <h3><span class="n">3</span>Current Workflow</h3>
+          <div class="diagramwrap">
+            <div class="flow">
+              <div class="fstep"><div class="dot">1</div><div class="lbl">Enquiry received</div></div>
+              <div class="fline"></div>
+              <div class="fstep gap"><div class="dot">2</div><div class="lbl">Noted informally</div><div class="flag">Gap</div></div>
+              <div class="fline"></div>
+              <div class="fstep gap"><div class="dot">3</div><div class="lbl">Follow-up</div><div class="flag">Gap</div></div>
+              <div class="fline"></div>
+              <div class="fstep"><div class="dot">4</div><div class="lbl">Quote sent</div></div>
+              <div class="fline"></div>
+              <div class="fstep"><div class="dot">5</div><div class="lbl">Approval</div></div>
+              <div class="fline"></div>
+              <div class="fstep gap"><div class="dot">6</div><div class="lbl">Project tracking</div><div class="flag">Gap</div></div>
+              <div class="fline"></div>
+              <div class="fstep"><div class="dot">7</div><div class="lbl">Final payment</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rsection">
+          <h3><span class="n">4</span>Where to Focus First</h3>
+          <div class="prioritylist">
+            <div class="pitem"><b>Priority 1</b> — Put a simple, repeatable follow-up rhythm in place for new enquiries.</div>
+            <div class="pitem"><b>Priority 2</b> — Keep client details in one shared place, not memory or scattered chats.</div>
+            <div class="pitem"><b>Priority 3</b> — Build a lightweight quote template you can reuse and adjust.</div>
+          </div>
+        </div>
+
+        <div class="rcta">
+          <h3 style="color:var(--warm-white);">This is what your report will look like.</h3>
+          <p>Yours will be written from your own answers — different gaps, different priorities, same format.</p>
+          <button class="btn" onclick="goStage('form')">Start My Free Workflow Check</button>
+        </div>
+        <div class="lockednote">Free reports show your key gaps. Specific tools and implementation steps are covered in a consultation.</div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ STAGE 3: THANK YOU ============ -->
   <section class="stage" id="stage-thankyou">
     <div class="thankyou">
@@ -348,6 +499,11 @@
     document.getElementById('seg'+n).style.width='0%';
     window.scrollTo({top:0,behavior:'smooth'});
   }
+
+  // --- Show a free-text field when "Other" industry is chosen ---
+  document.getElementById('industry').addEventListener('change', function(){
+    document.getElementById('industryOther').style.display = this.value === 'Other' ? 'block' : 'none';
+  });
 
   // --- Chip groups (single + multi select), each backed by a hidden input ---
   document.querySelectorAll('.chiprow').forEach(row=>{
