@@ -281,3 +281,114 @@
               <option>Project management tool</option><option>Spreadsheet</option><option>Whiteboard / memory</option><option>Nothing formal</option>
             </select>
           </div>
+          <div class="field">
+            <label>Which tasks eat the most repeated manual time?</label>
+            <input type="hidden" id="manualTasks" name="manualTasks">
+            <div class="chiprow" data-group="manualTasks" data-multi="true">
+              <div class="chip" data-value="Data entry">Data entry</div><div class="chip" data-value="Follow-up reminders">Follow-up reminders</div><div class="chip" data-value="Quote writing">Quote writing</div><div class="chip" data-value="Invoicing">Invoicing</div><div class="chip" data-value="Status updates">Status updates</div>
+            </div>
+          </div>
+          <div class="field">
+            <label for="mistakes">Where do mistakes, delays, or forgotten tasks usually happen?</label>
+            <textarea id="mistakes" name="mistakes" required placeholder="e.g. Things slip when a job runs long and I lose track of who I've updated..."></textarea>
+          </div>
+          <div class="field">
+            <label for="frustration">In one sentence — your biggest operational frustration?</label>
+            <input type="text" id="frustration" name="frustration" required placeholder="e.g. I feel like I'm the only one who knows what's going on.">
+          </div>
+          <div class="field">
+            <label for="email">Your email — so we can send your report</label>
+            <input type="text" id="email" name="email" required placeholder="you@business.com">
+          </div>
+          <div class="formnav">
+            <button type="button" class="back" onclick="prevStep(3)">← Back</button>
+            <button type="submit" class="btn">Get My Free Report →</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ STAGE 3: THANK YOU ============ -->
+  <section class="stage" id="stage-thankyou">
+    <div class="thankyou">
+      <div class="mark">✓</div>
+      <h2>Thanks — you're all set.</h2>
+      <p>Your personalized workflow report will be in your inbox within 24 hours.</p>
+      <p style="opacity:.65; font-size:.85rem;">In the meantime, feel free to explore more at sherylautomates.com.</p>
+    </div>
+  </section>
+
+</div>
+
+<a class="home-link" href="https://sherylautomates.com/">← Back to Sheryl Automates</a>
+
+<script>
+  // --- Stage navigation ---
+  function goStage(name){
+    document.querySelectorAll('.stage').forEach(s=>s.classList.remove('active'));
+    document.getElementById('stage-'+name).classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+
+  function nextStep(n){
+    const current = document.getElementById('fstep-'+n);
+    const required = current.querySelectorAll('[required]');
+    for(const el of required){ if(!el.value){ el.reportValidity(); return; } }
+    current.style.display='none';
+    document.getElementById('fstep-'+(n+1)).style.display='block';
+    document.getElementById('stepnum').textContent = n+1;
+    document.getElementById('seg'+(n+1)).style.width='100%';
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  function prevStep(n){
+    document.getElementById('fstep-'+n).style.display='none';
+    document.getElementById('fstep-'+(n-1)).style.display='block';
+    document.getElementById('stepnum').textContent = n-1;
+    document.getElementById('seg'+n).style.width='0%';
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+
+  // --- Chip groups (single + multi select), each backed by a hidden input ---
+  document.querySelectorAll('.chiprow').forEach(row=>{
+    const group = row.dataset.group;
+    const multi = row.dataset.multi === 'true';
+    const hidden = document.getElementById(group);
+    row.querySelectorAll('.chip').forEach(chip=>{
+      chip.addEventListener('click', ()=>{
+        if(!multi){ row.querySelectorAll('.chip').forEach(c=>c.classList.remove('sel')); }
+        chip.classList.toggle('sel');
+        const selected = [...row.querySelectorAll('.chip.sel')].map(c=>c.dataset.value);
+        hidden.value = selected.join(', ');
+      });
+    });
+  });
+
+  // --- Form submission ---
+  // TODO: replace with the GoHighLevel form/webhook endpoint once that side is built.
+  // Until then, submissions are only logged client-side and shown the thank-you screen —
+  // nothing is actually sent or stored yet.
+  const GHL_WEBHOOK_URL = ""; // <-- paste GHL webhook URL here when ready
+
+  document.getElementById('workflowForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const required = document.getElementById('fstep-3').querySelectorAll('[required]');
+    for(const el of required){ if(!el.value){ el.reportValidity(); return; } }
+
+    const data = Object.fromEntries(new FormData(e.target).entries());
+
+    if(GHL_WEBHOOK_URL){
+      fetch(GHL_WEBHOOK_URL, {
+        method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify(data)
+      }).catch(()=>{ /* fail silently on the client; visitor still sees thank-you */ });
+    } else {
+      console.log('Workflow check submission (no webhook configured yet):', data);
+    }
+
+    goStage('thankyou');
+  });
+</script>
+</body>
+</html>
