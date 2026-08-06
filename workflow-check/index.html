@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="A free, personal workflow check for your business — find out where leads, follow-up and admin are quietly costing you time." />
+<meta property="og:title" content="Free Workflow Check | Sheryl Automates" />
+<meta property="og:description" content="Answer a short set of questions about how your business runs today and get a personal report on your workflow gaps." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://sherylautomates.com/workflow-check/" />
+<title>Free Workflow Check | Sheryl Automates</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --espresso:#17110D;
+    --mocha:#2A201A;
+    --sage-bg:#F2F3EC;
+    --ivory:#F7F3EB;
+    --sage-accent:#B7BCA9;
+    --olive:#73765F;
+    --taupe:#B7A791;
+    --gold:#B49A6A;
+    --ink:#2B2521;
+    --warm-white:#F5F1E9;
+    --line: rgba(43,37,33,0.14);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --sage-bg:#1B1611; --ivory:#211A15; --ink:#EFE9DE; --line: rgba(239,233,222,0.14); }
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--sage-bg); color:var(--ink);
+    font-family:"DM Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    line-height:1.55; -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{ font-family:"Playfair Display",Georgia,serif; font-weight:600; letter-spacing:.2px; text-wrap:balance; margin:0; }
+  .eyebrow{ text-transform:uppercase; letter-spacing:.14em; font-size:.72rem; font-weight:600; color:var(--olive); }
+  @media (prefers-color-scheme: dark){ .eyebrow{ color:var(--taupe); } }
+
+  .shell{ max-width:1040px; margin:0 auto; padding: 28px 24px 80px; }
+  .home-link{ display:block; text-align:center; padding:14px; font-size:.8rem; color:var(--olive); text-decoration:none; }
+  .home-link:hover{ text-decoration:underline; }
+
+  .stage{ display:none; }
+  .stage.active{ display:block; animation: fade .35s ease; }
+  @keyframes fade{ from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);} }
+  @media (prefers-reduced-motion: reduce){ .stage.active{ animation:none; } }
+
+  /* ---------- LANDING ---------- */
+  .hero{
+    background:var(--espresso); color:var(--warm-white);
+    border-radius:18px; padding:56px 44px; position:relative; overflow:hidden; margin-bottom:18px;
+  }
+  .hero::after{ content:""; position:absolute; right:-60px; top:-60px; width:280px; height:280px; border:1px solid rgba(180,154,106,0.25); border-radius:50%; }
+  .hero::before{ content:""; position:absolute; right:20px; bottom:-90px; width:220px; height:220px; border:1px solid rgba(183,188,169,0.18); border-radius:50%; }
+  .hero .eyebrow{ color:var(--taupe); }
+  .hero h1{ font-size:2.6rem; line-height:1.12; margin:14px 0 18px; max-width:600px; }
+  .hero p{ max-width:520px; color:var(--warm-white); opacity:.86; font-size:1.02rem; margin:0 0 26px; position:relative; }
+  .hero .meta{ font-size:.82rem; opacity:.65; margin-top:16px; position:relative; }
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    font-family:"DM Sans",sans-serif; font-weight:600; font-size:.88rem; letter-spacing:.03em;
+    padding:14px 26px; border-radius:8px; border:1px solid var(--gold);
+    background:var(--gold); color:var(--espresso); cursor:pointer; text-transform:uppercase;
+    transition: transform .15s ease, background .15s ease; position:relative;
+  }
+  .btn:hover{ background:#c4a978; transform:translateY(-1px); }
+  .btn:focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
+
+  .reviewgrid{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin:34px 0; }
+  @media (max-width:720px){ .reviewgrid{ grid-template-columns:repeat(2,1fr);} }
+  .rcard{ background:var(--ivory); border:1px solid var(--line); border-radius:12px; padding:20px 18px; text-align:center; }
+  .rcard .icon{ width:38px;height:38px;margin:0 auto 12px; border-radius:50%; border:1px solid var(--taupe); display:flex; align-items:center; justify-content:center; color:var(--olive); font-size:1.05rem; }
+  .rcard h3{ font-size:1rem; margin-bottom:6px; }
+  .rcard p{ font-size:.82rem; color:var(--olive); margin:0; }
+  @media (prefers-color-scheme: dark){ .rcard p{ color:var(--taupe); } }
+
+  .split{ display:grid; grid-template-columns:1fr 1fr; gap:34px; align-items:center; margin:44px 0; }
+  @media (max-width:760px){ .split{ grid-template-columns:1fr; } }
+  .split h2{ font-size:1.7rem; margin-bottom:14px; }
+  .split ul{ list-style:none; padding:0; margin:16px 0 0; display:flex; flex-direction:column; gap:10px; }
+  .split li{ font-size:.92rem; padding-left:22px; position:relative; }
+  .split li::before{ content:"✓"; position:absolute; left:0; color:var(--olive); font-weight:700; }
+  .previewcard{ background:var(--ivory); border:1px solid var(--line); border-radius:14px; padding:26px; box-shadow:0 18px 40px -22px rgba(23,17,13,0.35); }
+  .previewcard .ptitle{ font-size:.68rem; text-transform:uppercase; letter-spacing:.12em; color:var(--olive); margin-bottom:4px; }
+  .previewcard h3{ font-size:1.3rem; margin-bottom:16px; }
+  .plines{ display:flex; flex-direction:column; gap:11px; }
+  .pline{ display:flex; justify-content:space-between; align-items:center; font-size:.82rem; border-bottom:1px dashed var(--line); padding-bottom:9px; }
+
+  .closing{ background:var(--espresso); color:var(--warm-white); border-radius:18px; padding:44px; display:flex; justify-content:space-between; align-items:center; gap:24px; margin-top:44px; }
+  @media (max-width:640px){ .closing{ flex-direction:column; text-align:center; } }
+  .closing h2{ font-size:1.5rem; max-width:340px; }
+
+  /* ---------- FORM ---------- */
+  .formwrap{ max-width:640px; margin:0 auto; }
+  .progress{ display:flex; align-items:center; gap:8px; margin-bottom:30px; }
+  .progress .seg{ flex:1; height:3px; background:var(--line); border-radius:2px; overflow:hidden; }
+  .progress .seg i{ display:block; height:100%; background:var(--olive); width:0%; transition:width .3s ease; }
+  @media (prefers-color-scheme: dark){ .progress .seg i{ background:var(--gold); } }
+  .progress .step-label{ font-size:.72rem; color:var(--olive); white-space:nowrap; letter-spacing:.05em; text-transform:uppercase;}
+  @media (prefers-color-scheme: dark){ .progress .step-label{ color:var(--taupe); } }
+
+  .formcard{ background:var(--ivory); border:1px solid var(--line); border-radius:16px; padding:38px 34px; }
+  .formcard .kicker{ font-size:.72rem; text-transform:uppercase; letter-spacing:.12em; color:var(--olive); margin-bottom:8px; }
+  @media (prefers-color-scheme: dark){ .formcard .kicker{ color:var(--taupe); } }
+  .formcard h2{ font-size:1.5rem; margin-bottom:4px; }
+  .formcard .sub{ font-size:.86rem; color:var(--olive); margin:6px 0 26px; }
+  @media (prefers-color-scheme: dark){ .formcard .sub{ color:var(--taupe); } }
+
+  .field{ margin-bottom:20px; }
+  .field label{ display:block; font-size:.84rem; font-weight:600; margin-bottom:8px; }
+  .field input[type="text"], .field select, .field textarea{
+    width:100%; font-family:inherit; font-size:.9rem; padding:11px 13px;
+    border:1px solid var(--line); border-radius:8px; background:var(--sage-bg); color:var(--ink);
+  }
+  .field textarea{ resize:vertical; min-height:70px; }
+  .field input:focus, .field select:focus, .field textarea:focus{ outline:2px solid var(--gold); outline-offset:1px; }
+
+  .chiprow{ display:flex; flex-wrap:wrap; gap:8px; }
+  .chip{ font-size:.8rem; padding:8px 14px; border-radius:999px; border:1px solid var(--line); background:var(--sage-bg); cursor:pointer; user-select:none; }
+  .chip.sel{ background:var(--espresso); color:var(--warm-white); border-color:var(--espresso); }
+  @media (prefers-color-scheme: dark){ .chip.sel{ background:var(--gold); color:var(--espresso); border-color:var(--gold); } }
+
+  .formnav{ display:flex; justify-content:space-between; align-items:center; margin-top:30px; }
+  .formnav .back{ font-size:.82rem; color:var(--olive); background:none; border:none; cursor:pointer; }
+  .required-note{ font-size:.76rem; color:var(--olive); margin-top:-10px; margin-bottom:18px; }
+
+  /* ---------- THANK YOU ---------- */
+  .thankyou{ max-width:560px; margin:40px auto; text-align:center; }
+  .thankyou .mark{ width:56px;height:56px;border-radius:50%;background:var(--espresso); color:var(--warm-white); display:flex; align-items:center; justify-content:center; margin:0 auto 20px; font-size:1.4rem; }
+  .thankyou h2{ font-size:1.7rem; margin-bottom:14px; }
+  .thankyou p{ font-size:.94rem; opacity:.85; margin:0 0 10px; }
+</style>
+</head>
+<body>
+
+<div class="shell">
+
+  <!-- ============ STAGE 1: LANDING ============ -->
+  <section class="stage active" id="stage-landing">
+    <div class="hero">
+      <div class="eyebrow">Free Workflow Check</div>
+      <h1>Find out where your business is quietly losing time.</h1>
+      <p>A short, practical check-up on how leads, follow-up, quoting and admin actually move through your business today — with a personal report on where the gaps are.</p>
+      <button class="btn" onclick="goStage('form')">Start the Free Workflow Check</button>
+      <div class="meta">Takes about 4 minutes · No signup required</div>
+    </div>
+
+    <div class="reviewgrid">
+      <div class="rcard"><div class="icon">◐</div><h3>Enquiries &amp; Leads</h3><p>How new business reaches you and what happens next.</p></div>
+      <div class="rcard"><div class="icon">◑</div><h3>Follow-Up &amp; Quoting</h3><p>Response speed, proposals, and what falls through.</p></div>
+      <div class="rcard"><div class="icon">◒</div><h3>Projects &amp; Admin</h3><p>Task tracking, updates, invoicing.</p></div>
+      <div class="rcard"><div class="icon">◓</div><h3>Tools You Use</h3><p>What's in place, and where it's stretched thin.</p></div>
+    </div>
+
+    <div class="split">
+      <div>
+        <div class="eyebrow">What you'll get</div>
+        <h2>A clear, personal snapshot — not a generic checklist.</h2>
+        <p style="font-size:.92rem; opacity:.85;">Answer a short set of questions about how your business runs today. You'll receive a short report showing your main workflow gaps, what they're likely costing you, and where to focus first.</p>
+        <ul>
+          <li>Written specifically from your answers</li>
+          <li>A simple workflow health score</li>
+          <li>A visual map of your current process</li>
+          <li>No obligation, no hard sell</li>
+        </ul>
+      </div>
+      <div class="previewcard">
+        <div class="ptitle">Preview</div>
+        <h3>Your Workflow Report</h3>
+        <div class="plines">
+          <div class="pline"><span>Workflow health score</span><span>Included</span></div>
+          <div class="pline"><span>Gaps identified</span><span>Included</span></div>
+          <div class="pline"><span>Highest-risk area</span><span>Included</span></div>
+          <div class="pline"><span>Process map</span><span>Included</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="closing">
+      <h2>Start with clarity, not a sales call.</h2>
+      <button class="btn" onclick="goStage('form')">Get My Free Workflow Check</button>
+    </div>
+  </section>
+
+  <!-- ============ STAGE 2: FORM ============ -->
+  <section class="stage" id="stage-form">
+    <div class="formwrap">
+      <form id="workflowForm">
+        <div class="progress">
+          <div class="step-label">Step <span id="stepnum">1</span> of 3</div>
+          <div class="seg"><i id="seg1" style="width:100%"></i></div>
+          <div class="seg"><i id="seg2"></i></div>
+          <div class="seg"><i id="seg3"></i></div>
+        </div>
+
+        <!-- STEP 1 -->
+        <div class="formcard formstep" id="fstep-1">
+          <div class="kicker">About your business</div>
+          <h2>Let's start with the basics.</h2>
+          <div class="sub">Nothing here takes long — four quick fields.</div>
+
+          <div class="field">
+            <label for="businessName">Business name</label>
+            <input type="text" id="businessName" name="businessName" required placeholder="e.g. Marlow Interiors">
+          </div>
+          <div class="field">
+            <label for="industry">Industry</label>
+            <select id="industry" name="industry" required>
+              <option value="">Select one</option>
+              <option>Interior design</option><option>Home services / trades</option><option>Professional services</option><option>Retail</option><option>Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Team size</label>
+            <input type="hidden" id="teamSize" name="teamSize" required>
+            <div class="chiprow" data-group="teamSize">
+              <div class="chip" data-value="Solo">Solo</div><div class="chip" data-value="2-5">2–5</div><div class="chip" data-value="6-15">6–15</div><div class="chip" data-value="16+">16+</div>
+            </div>
+          </div>
+          <div class="field">
+            <label for="website">Website or main social profile <span style="font-weight:400;color:var(--olive);">(optional)</span></label>
+            <input type="text" id="website" name="website" placeholder="yourbusiness.com or @handle">
+          </div>
+          <div class="formnav">
+            <span></span>
+            <button type="button" class="btn" onclick="nextStep(1)">Continue</button>
+          </div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="formcard formstep" id="fstep-2" style="display:none;">
+          <div class="kicker">How work moves today</div>
+          <h2>Walk us through your current process.</h2>
+          <div class="sub">Pick what's closest — there's no wrong answer.</div>
+
+          <div class="field">
+            <label>How do most new enquiries reach you?</label>
+            <input type="hidden" id="enquirySource" name="enquirySource">
+            <div class="chiprow" data-group="enquirySource" data-multi="true">
+              <div class="chip" data-value="Phone">Phone</div><div class="chip" data-value="Email">Email</div><div class="chip" data-value="Social DM">Social DM</div><div class="chip" data-value="Website form">Website form</div><div class="chip" data-value="Referral">Referral</div>
+            </div>
+          </div>
+          <div class="field">
+            <label for="infoStorage">Where is customer information stored?</label>
+            <select id="infoStorage" name="infoStorage" required>
+              <option value="">Select one</option>
+              <option>Spreadsheet</option><option>CRM</option><option>Email inbox</option><option>Notebook / memory</option><option>Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="followUp">How do you follow up on leads that go quiet?</label>
+            <textarea id="followUp" name="followUp" required placeholder="e.g. I try to remember to text them back within a few days..."></textarea>
+          </div>
+          <div class="field">
+            <label for="quoting">How are quotes or proposals put together?</label>
+            <select id="quoting" name="quoting" required>
+              <option value="">Select one</option>
+              <option>Manual document each time</option><option>Reusable template</option><option>Quoting software</option><option>Verbal / informal</option>
+            </select>
+          </div>
+          <div class="formnav">
+            <button type="button" class="back" onclick="prevStep(2)">← Back</button>
+            <button type="button" class="btn" onclick="nextStep(2)">Continue</button>
+          </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="formcard formstep" id="fstep-3" style="display:none;">
+          <div class="kicker">Where it gets stuck</div>
+          <h2>Almost done — the important part.</h2>
+          <div class="sub">This is what makes your report personal, not generic.</div>
+
+          <div class="field">
+            <label for="projectTracking">How are jobs/projects tracked once they start?</label>
+            <select id="projectTracking" name="projectTracking" required>
+              <option value="">Select one</option>
+              <option>Project management tool</option><option>Spreadsheet</option><option>Whiteboard / memory</option><option>Nothing formal</option>
+            </select>
+          </div>
