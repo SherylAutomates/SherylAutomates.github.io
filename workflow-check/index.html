@@ -247,29 +247,7 @@
   <!-- ============ STAGE 2: FORM ============ -->
   <section class="stage" id="stage-form">
     <div class="formwrap">
-      <div class="formcard">
-        <div class="kicker">Free workflow check</div>
-        <h2>Tell me how your business works today.</h2>
-        <div class="sub">Your answers are sent securely to Sheryl Automates so I can prepare your personalised report.</div>
-        <iframe
-          src="https://api.leadconnectorhq.com/widget/form/E07I6gD0VlixNPGkkuYQ"
-          style="width:100%;height:1200px;border:none;border-radius:8px"
-          id="inline-E07I6gD0VlixNPGkkuYQ"
-          data-layout="{'id':'INLINE'}"
-          data-trigger-type="alwaysShow"
-          data-trigger-value=""
-          data-activation-type="alwaysActivated"
-          data-activation-value=""
-          data-deactivation-type="neverDeactivate"
-          data-deactivation-value=""
-          data-form-name="Workflow Check"
-          data-height="1200"
-          data-layout-iframe-id="inline-E07I6gD0VlixNPGkkuYQ"
-          data-form-id="E07I6gD0VlixNPGkkuYQ"
-          title="Free Workflow Check"
-        ></iframe>
-      </div>
-      <form id="workflowForm" style="display:none">
+      <form id="workflowForm">
         <div class="progress">
           <div class="step-label">Step <span id="stepnum">1</span> of 3</div>
           <div class="seg"><i id="seg1" style="width:100%"></i></div>
@@ -379,7 +357,7 @@
           </div>
           <div class="field">
             <label for="email">Your email — so we can send your report</label>
-            <input type="text" id="email" name="email" required placeholder="you@business.com">
+            <input type="email" id="email" name="email" required placeholder="you@business.com">
           </div>
           <div class="formnav">
             <button type="button" class="back" onclick="prevStep(3)">← Back</button>
@@ -542,32 +520,33 @@
     });
   });
 
-  // --- Form submission ---
-  // TODO: replace with the GoHighLevel form/webhook endpoint once that side is built.
-  // Until then, submissions are only logged client-side and shown the thank-you screen —
-  // nothing is actually sent or stored yet.
-  const GHL_WEBHOOK_URL = ""; // <-- paste GHL webhook URL here when ready
-
-  document.getElementById('workflowForm').addEventListener('submit', function(e){
+  // --- Form submission via Formspree ---
+  document.getElementById('workflowForm').addEventListener('submit', async function(e){
     e.preventDefault();
     const required = document.getElementById('fstep-3').querySelectorAll('[required]');
     for(const el of required){ if(!el.value){ el.reportValidity(); return; } }
 
-    const data = Object.fromEntries(new FormData(e.target).entries());
+    const submitButton = e.target.querySelector('button[type="submit"]');
+    const originalText = submitButton.textContent;
+    submitButton.disabled = true;
+    submitButton.textContent = 'Sending…';
 
-    if(GHL_WEBHOOK_URL){
-      fetch(GHL_WEBHOOK_URL, {
+    try {
+      const response = await fetch('https://formspree.io/f/xqpzqank', {
         method: 'POST',
-        headers: {'Content-Type':'application/json'},
-        body: JSON.stringify(data)
-      }).catch(()=>{ /* fail silently on the client; visitor still sees thank-you */ });
-    } else {
-      console.log('Workflow check submission (no webhook configured yet):', data);
+        body: new FormData(e.target),
+        headers: {'Accept':'application/json'}
+      });
+      if(!response.ok) throw new Error('Submission failed');
+      goStage('thankyou');
+      e.target.reset();
+    } catch(error) {
+      alert('Sorry, your answers could not be sent. Please try again or email sherylautomates@gmail.com.');
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = originalText;
     }
-
-    goStage('thankyou');
   });
 </script>
-<script src="https://link.msgsndr.com/js/form_embed.js"></script>
 </body>
 </html>
