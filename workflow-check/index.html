@@ -247,7 +247,29 @@
   <!-- ============ STAGE 2: FORM ============ -->
   <section class="stage" id="stage-form">
     <div class="formwrap">
-      <form id="workflowForm">
+      <div class="formcard">
+        <div class="kicker">Free workflow check</div>
+        <h2>Tell me how your business works today.</h2>
+        <div class="sub">Your answers are sent securely to Sheryl Automates so I can prepare your personalised report.</div>
+        <iframe
+          src="https://api.leadconnectorhq.com/widget/form/E07I6gD0VlixNPGkkuYQ"
+          style="width:100%;height:1200px;border:none;border-radius:8px"
+          id="inline-E07I6gD0VlixNPGkkuYQ"
+          data-layout="{'id':'INLINE'}"
+          data-trigger-type="alwaysShow"
+          data-trigger-value=""
+          data-activation-type="alwaysActivated"
+          data-activation-value=""
+          data-deactivation-type="neverDeactivate"
+          data-deactivation-value=""
+          data-form-name="Workflow Check"
+          data-height="1200"
+          data-layout-iframe-id="inline-E07I6gD0VlixNPGkkuYQ"
+          data-form-id="E07I6gD0VlixNPGkkuYQ"
+          title="Free Workflow Check"
+        ></iframe>
+      </div>
+      <form id="workflowForm" style="display:none">
         <div class="progress">
           <div class="step-label">Step <span id="stepnum">1</span> of 3</div>
           <div class="seg"><i id="seg1" style="width:100%"></i></div>
@@ -546,5 +568,6 @@
     goStage('thankyou');
   });
 </script>
+<script src="https://link.msgsndr.com/js/form_embed.js"></script>
 </body>
 </html>
